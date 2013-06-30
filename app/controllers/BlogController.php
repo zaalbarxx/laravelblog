@@ -4,16 +4,16 @@ class BlogController extends BaseController {
 	private $cycle = 'odd';
 
 	public function show($id,$slug){
-		$blog = Blog::with(array('comment'=>function($query){
-			$query->orderBy('created_at','DESC');
-		}))->find($id);
+		$blog = Blog::find($id);
+		$comments = $blog->comment()->orderBy('created_at','DESC')->paginate(3);
 		$cycle = 'odd';
 		
 		foreach($blog->comment as $c){
 			$c->cycle = $this->cycle();
 		}
 		$view = View::make('blog.show');
-		$view->data = $blog;
+		$view->blog = $blog;
+		$view->comments = $comments;
 		$this->layout->content = $view;
 	}
 

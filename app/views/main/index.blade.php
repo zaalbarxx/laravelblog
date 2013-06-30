@@ -26,6 +26,7 @@
             </footer>
         </article>
 @endforeach
+{{$data->links()}}
 @else
 @lang('main.no_blogs_found')
 @endif

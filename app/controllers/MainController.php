@@ -7,7 +7,7 @@ class MainController extends BaseController {
 	{
 		$blogs = Blog::with(array('comment'=>function($query){
 			$query->select(DB::raw('count(*) as counter,blog_id'))->groupBy('blog_id');
-		}))->get();
+		}))->paginate(3);
 
 		foreach($blogs as $b){
 			if(strlen($b->body)>300){

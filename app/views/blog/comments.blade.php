@@ -1,8 +1,8 @@
 <section class="comments" id="comments">
     <section class="previous-comments">
             <h3>@lang('main.comments')</h3>
-    @if(count($data->comment)>0)
-        @foreach($data->comment as $c)
+    @if(count($comments)>0)
+        @foreach($comments as $c)
             <article class="comment {{$c->cycle}}" id="comment-{{$c->id}}">
                 <header>
                     <p><span class="highlight">{{$c->author}}</span> @lang('main.commented') <time datetime="{{$c->created_at}}">{{$c->created_at}}</time></p>
@@ -10,6 +10,7 @@
                 <p>{{$c->comment}}</p>
             </article>
         @endforeach
+    {{$comments->links()}}
     @else
         <p>@lang('main.no_comments_for_post')...</p>
     @endif
@@ -21,7 +22,7 @@
         @endforeach
         </div>
     @endif
-    {{Form::open(array('route'=>array('comment_add',$data->id)))}}
+    {{Form::open(array('route'=>array('do_comment_add',$blog->id)))}}
         <div class='control-group'>
             {{Form::label('user',Lang::get('main.comment_user'))}}
             {{Form::text('user')}}

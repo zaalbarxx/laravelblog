@@ -50,7 +50,11 @@ body {
 .clear {
     clear: both;
 }
-
+div#messagebox{border:1px solid black;position:absolute;left:0;right:0;text-align:center;padding:25px 50px;background-color:white;}
+div.errors ul{margin:0px 0px 10px 0px;color:red;text-decoration: underline;}
+div.errors ul li{padding:5px 0px;}
+div.error{color:red;text-decoration: underline;font-style: italic;}
+div.message-success{color:green;text-decoration:underline;}
 b {
 
 }

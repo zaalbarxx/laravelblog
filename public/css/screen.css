@@ -21,7 +21,7 @@ input.search-input{width:134px;}
 .comments .comment p { margin-bottom: 0; }
 .comments h3 { background: #eee; padding: 10px; font-size: 20px; margin-bottom: 20px; clear: both; }
 .comments .previous-comments { margin-bottom: 20px; }
-div#messagebox{border:1px solid black;display:none;text-align:center;padding:25px 50px;background-color:white;}
+div#messagebox{border:1px solid black;position:absolute;left:0;right:0;text-align:center;padding:25px 50px;background-color:white;}
 div#about_desc ul{margin-top:10px;list-style-type: circle;}
 article.blog{
     border-bottom: 2px dotted #f48a00;
@@ -53,8 +53,8 @@ div.errors ul li{padding:5px 0px;}
 div.error{color:red;text-decoration: underline;font-style: italic;}
 div.message-success{color:green;text-decoration:underline;}
 .main-col { width: 700px; display: inline-block; float: left; border-right: 1px solid #ccc; padding: 20px; margin-bottom: 20px; }
+.admin-main-col{width:960px;display:inline-block; float: left;padding: 20px; margin-bottom: 20px;}
 .sidebar { width: 239px; padding: 10px; display: inline-block; }
-
 .main-col a { color: #F48A00; }
 .main-col h1,
 .main-col h2

@@ -2,7 +2,7 @@
     <header>
         <h3>@lang('main.search')</h3>
     </header>
-	{{Form::open(array('route'=>'search','class'=>'form-search'))}}
+	{{Form::open(array('route'=>'do_search','class'=>'form-search'))}}
 	{{Form::text('query',null,array('class'=>'search-input search-query'))}}
 	{{Form::submit(Lang::get('main.search'),array('class'=>'btn btn-primary'))}}
 	{{Form::close()}}

@@ -17,14 +17,12 @@ class MainController extends BaseController {
 		}
 		$view = View::make('main.index');
 		$view->data = $blogs;
-		//$this->layout->querylog = DB::getQueryLog();
 		$this->layout->content = $view;
 	}
 
 	public function search(){
 		$results = new Blog;
 		$results = $results->search_results(Input::get('query'));
-		$this->layout->querylog = DB::getQueryLog();
 		$this->layout->content = View::make('main.search')->with('data',$results);
 	}
 	public function do_contact(){

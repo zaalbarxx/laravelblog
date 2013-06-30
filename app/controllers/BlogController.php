@@ -31,7 +31,7 @@ class BlogController extends BaseController {
 			$comment->comment = Input::get('body');
 			$comment->approved = 1;
 			$comment->save();
-			return Redirect::back()->with('message',Lang::get('main.comment_added_successfully'));
+			return Redirect::route('blog_show',array('id'=>$blog_id,'slug'=>$blog->slug))->with('message',Lang::get('main.comment_added_successfully'));
 		}
 		else{
 			return Redirect::back()->withInput()->withErrors($validator->getErrors());

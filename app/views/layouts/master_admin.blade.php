@@ -40,11 +40,11 @@ showFlashMessage(message);
             <nav>
                 <ul class="navigation">
                 @section('nav')
-                    <li>{{HTML::linkRoute('home', 'Home')}}</li>
-                    <li>{{HTML::linkRoute('about', 'About')}}</li>
-                    <li>{{HTML::linkRoute('contact', 'Contact')}}</li>
+                    <li>{{HTML::linkRoute('home', Lang::get('main.home'))}}</li>
+                    <li>{{HTML::linkRoute('about', Lang::get('main.about'))}}</li>
+                    <li>{{HTML::linkRoute('contact', Lang::get('main.contact'))}}</li>
                     @if(Auth::check())
-                    <li>{{HTML::linkRoute('admin_logout','Logout')}}</li>
+                    <li>{{HTML::linkRoute('admin_logout',Lang::get('main.logout'))}}</li>
                     @endif
                 @show
                 </ul>

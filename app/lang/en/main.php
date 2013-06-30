@@ -9,7 +9,6 @@ return array(
 	'tags' => 'Tags',
 	'continue_reading' => 'continue reading...',
 	'posted_by'	=> 'Posted by',
-	'comments' => 'Comments',
 	'commented' => 'commented',
 	'no_comments_for_post' => 'No comments for this post.',
 	'no_latest_tags' => 'No tags in cloud',
@@ -25,7 +24,6 @@ return array(
 	'contact_message' => 'Message:',
 	'contact_subject' => 'Subject:',
 	'submit' => 'Submit',
-	'contact_name' => 'Name:',
 	'comment_added_successfully' => 'Comment has been successfully added.',
 	'no_such_blog' => 'There is no blog with provided id.',
 	'no_such_comment' => 'There is no comment with provided id.',
@@ -44,5 +42,9 @@ return array(
 	'blog_deleted_successfully' => 'Blog has been successfully deleted.',
 	'comment_deleted_successfully' => 'Comment has been successfully deleted.',
 	'comment_edited_successfully' => 'Comment has been successfully edited.',
+	'home' => 'Home',
+	'about' => 'About',
+	'contact' => 'Contact',
+	'logout' => 'Logout',
 
 );

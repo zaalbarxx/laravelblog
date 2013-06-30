@@ -2,7 +2,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
-    <title>Laravel BLOG - LaraBlog</title>
+    <title>@section('title')
+    Laravel BLOG - LaraBlog
+    @show
+    </title>
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -40,9 +43,9 @@ showFlashMessage(message);
             <nav>
                 <ul class="navigation">
                 @section('nav')
-                    <li>{{HTML::linkRoute('home', 'Home')}}</li>
-                    <li>{{HTML::linkRoute('about', 'About')}}</li>
-                    <li>{{HTML::linkRoute('contact', 'Contact')}}</li>
+                    <li>{{HTML::linkRoute('home', Lang::get('main.home'))}}</li>
+                    <li>{{HTML::linkRoute('about', Lang::get('main.about'))}}</li>
+                    <li>{{HTML::linkRoute('contact', Lang::get('main.contact'))}}</li>
                 @show
                 </ul>
             </nav>

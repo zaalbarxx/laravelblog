@@ -1,3 +1,7 @@
+@section('title')
+News - 
+@parent
+@stop
 @section('content')
 @if(count($data)>0)
 @foreach($data as $d)

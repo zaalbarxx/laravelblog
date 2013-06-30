@@ -1,3 +1,8 @@
+@section('title')
+{{$blog->title}} -
+@parent
+@stop
+
  @section('content')
    <article class="blog">
         <header>

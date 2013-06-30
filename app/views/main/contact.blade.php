@@ -1,3 +1,7 @@
+@section('title')
+Contact - 
+@parent
+@stop
 @section('content')
 <h2>Contact LaravelBlog</h2>
 Please, fill the form below to leave us a message.

@@ -14,8 +14,15 @@
 /*
 GET METHOD
  */
+	$languages = array('en','pl');
+	$locale = Request::segment(1);
+	if(in_array($locale, $languages)){
+		\App::setLocale($locale);
+	}else{
+		$locale = null;
+	}
 
-
+Route::group(array('prefix'=>$locale),function(){
 
 Route::get('admin/login',function(){
 	return View::make('layouts.master_admin')->with('content',View::make('admin.login'));
@@ -43,13 +50,6 @@ Route::post('admin/login',array('as'=>'do_login','uses'=>'AdminController@login'
 Route::post('comment_add/{blog_id}',array('as'=>'do_comment_add','uses'=>'BlogController@comment_add'));
 Route::post('contact',array('as'=>'do_contact','uses'=>'MainController@do_contact'));
 Route::post('search',array('as'=>'do_search','uses'=>'MainController@search'));
-
-
-
-
-/*
-ROUTE GROUPS
- */
 
 Route::group(array('before'=>'auth'),function(){
 	Route::get('admin/blog/create',array('as'=>'admin_blog_create',function(){
@@ -95,6 +95,14 @@ Route::group(array('before'=>'auth'),function(){
 	Route::post('admin/blog/{id}/edit',array('as'=>'do_admin_blog_edit','uses'=>'AdminController@blog_edit'));
 	Route::post('admin/comment/{id}/edit',array('as'=>'do_admin_comment_edit','uses'=>'AdminController@comment_edit'));
 });
+});
+
+
+/*
+ROUTE GROUPS
+ */
+
+
 
 
 

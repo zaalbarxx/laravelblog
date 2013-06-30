@@ -49,7 +49,7 @@ END GET METHOD
 Route::post('admin/login',array('as'=>'do_login','uses'=>'AdminController@login'));
 Route::post('comment_add/{blog_id}',array('as'=>'do_comment_add','uses'=>'BlogController@comment_add'));
 Route::post('contact',array('as'=>'do_contact','uses'=>'MainController@do_contact'));
-Route::post('search',array('as'=>'do_search','uses'=>'MainController@search'));
+Route::get('search',array('as'=>'do_search','uses'=>'MainController@search'));
 
 Route::group(array('before'=>'auth'),function(){
 	Route::get('admin/blog/create',array('as'=>'admin_blog_create',function(){

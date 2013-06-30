@@ -6,7 +6,7 @@ class Blog extends Eloquent{
 		return $this->hasMany('Comment');
 	}
 
-		public function slugify($text)
+	public function slugify($text)
 	{
 		// replace non letter or digits by -
 		$text = preg_replace('#[^\\pL\d]+#u', '-', $text);
@@ -30,6 +30,15 @@ class Blog extends Eloquent{
 		}
 
 		return $text;
+	}
+
+	public function search_results($query)
+	{
+		$results = $this->where('title', 'LIKE', '%' . $query . '%')
+			->orWhere('body', 'LIKE', '%' . $query . '%')
+			->orWhere('author', 'LIKE', '%' . $query . '%')
+			->orWhere('tags', 'LIKE', '%' . $query . '%')->get();
+		return $results;
 	}
 	
 }
